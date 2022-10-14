@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="pandemicaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentReferencenumber" />
+          </Key>
+          <Property Name="AppointmentReferencenumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="MobileNumber" Type="nvarchar(max)" />
+          <Property Name="EmailAddress" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="DateOfBirth" Type="nvarchar(max)" />
+          <Property Name="Vaccine" Type="nvarchar(max)" />
+          <Property Name="Clinic" Type="nvarchar(max)" />
+          <Property Name="AppointmentDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Clinic">
+          <Key>
+            <PropertyRef Name="UniqueID" />
+          </Key>
+          <Property Name="UniqueID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Longitude" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="nvarchar(max)" />
+          <Property Name="ClinicAddressLine1" Type="nvarchar(max)" />
+          <Property Name="ClinicAddressLine2" Type="nvarchar(max)" />
+          <Property Name="Suburb" Type="nvarchar(max)" />
+          <Property Name="state" Type="nvarchar(max)" />
+          <Property Name="Postcode" Type="nvarchar(max)" />
+          <Property Name="LocationInstructions" Type="nvarchar(max)" />
+          <Property Name="DriveThroughTesting" Type="nvarchar(max)" />
+          <Property Name="WheelchairAccessible" Type="nvarchar(max)" />
+          <Property Name="WalkInAllowed" Type="nvarchar(max)" />
+          <Property Name="BookingRequired" Type="nvarchar(max)" />
+          <Property Name="BookingLink" Type="nvarchar(max)" />
+          <Property Name="BookingPhoneNumber" Type="nvarchar(max)" />
+          <Property Name="AgeLimit" Type="nvarchar(max)" />
+          <Property Name="ReferralRequired" Type="nvarchar(max)" />
+          <Property Name="MondayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="MondayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="MondayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="MondayClosingHours" Type="nvarchar(max)" />
+          <Property Name="TuesdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="TuesdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="TuesdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="TuesdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="WednesdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="WednesdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="WednesdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="WednesdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="ThursdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="ThursdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="ThursdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="ThursdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="FridayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="FridayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="FridayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="FridayClosingHours" Type="nvarchar(max)" />
+          <Property Name="SaturdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="SaturdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="SaturdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="SaturdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="SundayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="SundayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="SundayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="SundayClosingHours" Type="nvarchar(max)" />
+          <Property Name="SpecialInstructions" Type="nvarchar(max)" />
+          <Property Name="ResultsInstructions" Type="nvarchar(max)" />
+          <Property Name="ClosureInstructions" Type="nvarchar(max)" />
+          <Property Name="AgeRestrictionInstructions" Type="nvarchar(max)" />
+          <Property Name="BookingInstructions" Type="nvarchar(max)" />
+          <Property Name="OtherInstructions" Type="nvarchar(max)" />
+          <Property Name="ProviderWebsite" Type="nvarchar(max)" />
+          <Property Name="LastUpdated" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="VaccinationCenter">
+          <Key>
+            <PropertyRef Name="UniqueID" />
+          </Key>
+          <Property Name="UniqueID" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Longitude" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="nvarchar(max)" />
+          <Property Name="ClinicAddressLine1" Type="nvarchar(max)" />
+          <Property Name="ClinicAddressLine2" Type="nvarchar(max)" />
+          <Property Name="Suburb" Type="nvarchar(max)" />
+          <Property Name="state" Type="nvarchar(max)" />
+          <Property Name="Postcode" Type="nvarchar(max)" />
+          <Property Name="LocationInstructions" Type="nvarchar(max)" />
+          <Property Name="DriveThroughTesting" Type="nvarchar(max)" />
+          <Property Name="WheelchairAccessible" Type="nvarchar(max)" />
+          <Property Name="WalkInAllowed" Type="nvarchar(max)" />
+          <Property Name="BookingRequired" Type="nvarchar(max)" />
+          <Property Name="BookingLink" Type="nvarchar(max)" />
+          <Property Name="BookingPhoneNumber" Type="nvarchar(max)" />
+          <Property Name="AgeLimit" Type="nvarchar(max)" />
+          <Property Name="ReferralRequired" Type="nvarchar(max)" />
+          <Property Name="MondayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="MondayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="MondayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="MondayClosingHours" Type="nvarchar(max)" />
+          <Property Name="TuesdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="TuesdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="TuesdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="TuesdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="WednesdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="WednesdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="WednesdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="WednesdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="ThursdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="ThursdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="ThursdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="ThursdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="FridayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="FridayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="FridayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="FridayClosingHours" Type="nvarchar(max)" />
+          <Property Name="SaturdayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="SaturdayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="SaturdayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="SaturdayClosingHours" Type="nvarchar(max)" />
+          <Property Name="SundayOpeningHours" Type="nvarchar(max)" />
+          <Property Name="SundayBreakStartTime" Type="nvarchar(max)" />
+          <Property Name="SundayBreakEndTime" Type="nvarchar(max)" />
+          <Property Name="SundayClosingHours" Type="nvarchar(max)" />
+          <Property Name="SpecialInstructions" Type="nvarchar(max)" />
+          <Property Name="ResultsInstructions" Type="nvarchar(max)" />
+          <Property Name="ClosureInstructions" Type="nvarchar(max)" />
+          <Property Name="AgeRestrictionInstructions" Type="nvarchar(max)" />
+          <Property Name="BookingInstructions" Type="nvarchar(max)" />
+          <Property Name="OtherInstructions" Type="nvarchar(max)" />
+          <Property Name="ProviderWebsite" Type="nvarchar(max)" />
+          <Property Name="LastUpdated" Type="nvarchar(max)" />
+          <Property Name="Moderna6Mto5Y" Type="char" MaxLength="1" />
+          <Property Name="Moderna6Yto11Y" Type="char" MaxLength="1" />
+          <Property Name="Moderna12Yplus" Type="char" MaxLength="1" />
+          <Property Name="Pfizer5Yto11Y" Type="char" MaxLength="1" />
+          <Property Name="pfizer12Yplus" Type="char" MaxLength="1" />
+          <Property Name="Novavax12Yplus" Type="char" MaxLength="1" />
+          <Property Name="AstraZeneca18plus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="pandemicaDBModelStoreContainer">
+          <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clinic" EntityType="Self.Clinic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VaccinationCenter" EntityType="Self.VaccinationCenter" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pandemicaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clinic">
+          <Key>
+            <PropertyRef Name="UniqueID" />
+          </Key>
+          <Property Name="UniqueID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClinicAddressLine1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClinicAddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Suburb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Postcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LocationInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DriveThroughTesting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WheelchairAccessible" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WalkInAllowed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingRequired" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingPhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AgeLimit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReferralRequired" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResultsInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClosureInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AgeRestrictionInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderWebsite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="pandemicaDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clinics" EntityType="Self.Clinic" />
+          <EntitySet Name="Appointments" EntityType="pandemicaDBModel.Appointment" />
+          <EntitySet Name="VaccinationCenters" EntityType="pandemicaDBModel.VaccinationCenter" />
+        </EntityContainer>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentReferencenumber" />
+          </Key>
+          <Property Name="AppointmentReferencenumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Vaccine" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Clinic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AppointmentDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="VaccinationCenter">
+          <Key>
+            <PropertyRef Name="UniqueID" />
+          </Key>
+          <Property Name="UniqueID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClinicAddressLine1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClinicAddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Suburb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Postcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LocationInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DriveThroughTesting" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WheelchairAccessible" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WalkInAllowed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingRequired" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingPhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AgeLimit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReferralRequired" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MondayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TuesdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WednesdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThursdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FridayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SaturdayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayOpeningHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayBreakStartTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayBreakEndTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SundayClosingHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResultsInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClosureInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AgeRestrictionInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BookingInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OtherInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderWebsite" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdated" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Moderna6Mto5Y" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Moderna6Yto11Y" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Moderna12Yplus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Pfizer5Yto11Y" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="pfizer12Yplus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Novavax12Yplus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AstraZeneca18plus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pandemicaDBModelStoreContainer" CdmEntityContainer="pandemicaDBEntities1">
+          <EntitySetMapping Name="Clinics">
+            <EntityTypeMapping TypeName="pandemicaDBModel.Clinic">
+              <MappingFragment StoreEntitySet="Clinic">
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="ClinicAddressLine1" ColumnName="ClinicAddressLine1" />
+                <ScalarProperty Name="ClinicAddressLine2" ColumnName="ClinicAddressLine2" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="LocationInstructions" ColumnName="LocationInstructions" />
+                <ScalarProperty Name="DriveThroughTesting" ColumnName="DriveThroughTesting" />
+                <ScalarProperty Name="WheelchairAccessible" ColumnName="WheelchairAccessible" />
+                <ScalarProperty Name="WalkInAllowed" ColumnName="WalkInAllowed" />
+                <ScalarProperty Name="BookingRequired" ColumnName="BookingRequired" />
+                <ScalarProperty Name="BookingLink" ColumnName="BookingLink" />
+                <ScalarProperty Name="BookingPhoneNumber" ColumnName="BookingPhoneNumber" />
+                <ScalarProperty Name="AgeLimit" ColumnName="AgeLimit" />
+                <ScalarProperty Name="ReferralRequired" ColumnName="ReferralRequired" />
+                <ScalarProperty Name="MondayOpeningHours" ColumnName="MondayOpeningHours" />
+                <ScalarProperty Name="MondayBreakStartTime" ColumnName="MondayBreakStartTime" />
+                <ScalarProperty Name="MondayBreakEndTime" ColumnName="MondayBreakEndTime" />
+                <ScalarProperty Name="MondayClosingHours" ColumnName="MondayClosingHours" />
+                <ScalarProperty Name="TuesdayOpeningHours" ColumnName="TuesdayOpeningHours" />
+                <ScalarProperty Name="TuesdayBreakStartTime" ColumnName="TuesdayBreakStartTime" />
+                <ScalarProperty Name="TuesdayBreakEndTime" ColumnName="TuesdayBreakEndTime" />
+                <ScalarProperty Name="TuesdayClosingHours" ColumnName="TuesdayClosingHours" />
+                <ScalarProperty Name="WednesdayOpeningHours" ColumnName="WednesdayOpeningHours" />
+                <ScalarProperty Name="WednesdayBreakStartTime" ColumnName="WednesdayBreakStartTime" />
+                <ScalarProperty Name="WednesdayBreakEndTime" ColumnName="WednesdayBreakEndTime" />
+                <ScalarProperty Name="WednesdayClosingHours" ColumnName="WednesdayClosingHours" />
+                <ScalarProperty Name="ThursdayOpeningHours" ColumnName="ThursdayOpeningHours" />
+                <ScalarProperty Name="ThursdayBreakStartTime" ColumnName="ThursdayBreakStartTime" />
+                <ScalarProperty Name="ThursdayBreakEndTime" ColumnName="ThursdayBreakEndTime" />
+                <ScalarProperty Name="ThursdayClosingHours" ColumnName="ThursdayClosingHours" />
+                <ScalarProperty Name="FridayOpeningHours" ColumnName="FridayOpeningHours" />
+                <ScalarProperty Name="FridayBreakStartTime" ColumnName="FridayBreakStartTime" />
+                <ScalarProperty Name="FridayBreakEndTime" ColumnName="FridayBreakEndTime" />
+                <ScalarProperty Name="FridayClosingHours" ColumnName="FridayClosingHours" />
+                <ScalarProperty Name="SaturdayOpeningHours" ColumnName="SaturdayOpeningHours" />
+                <ScalarProperty Name="SaturdayBreakStartTime" ColumnName="SaturdayBreakStartTime" />
+                <ScalarProperty Name="SaturdayBreakEndTime" ColumnName="SaturdayBreakEndTime" />
+                <ScalarProperty Name="SaturdayClosingHours" ColumnName="SaturdayClosingHours" />
+                <ScalarProperty Name="SundayOpeningHours" ColumnName="SundayOpeningHours" />
+                <ScalarProperty Name="SundayBreakStartTime" ColumnName="SundayBreakStartTime" />
+                <ScalarProperty Name="SundayBreakEndTime" ColumnName="SundayBreakEndTime" />
+                <ScalarProperty Name="SundayClosingHours" ColumnName="SundayClosingHours" />
+                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+                <ScalarProperty Name="ResultsInstructions" ColumnName="ResultsInstructions" />
+                <ScalarProperty Name="ClosureInstructions" ColumnName="ClosureInstructions" />
+                <ScalarProperty Name="AgeRestrictionInstructions" ColumnName="AgeRestrictionInstructions" />
+                <ScalarProperty Name="BookingInstructions" ColumnName="BookingInstructions" />
+                <ScalarProperty Name="OtherInstructions" ColumnName="OtherInstructions" />
+                <ScalarProperty Name="ProviderWebsite" ColumnName="ProviderWebsite" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="pandemicaDBModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="AppointmentDateTime" ColumnName="AppointmentDateTime" />
+                <ScalarProperty Name="Clinic" ColumnName="Clinic" />
+                <ScalarProperty Name="Vaccine" ColumnName="Vaccine" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="AppointmentReferencenumber" ColumnName="AppointmentReferencenumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VaccinationCenters">
+            <EntityTypeMapping TypeName="pandemicaDBModel.VaccinationCenter">
+              <MappingFragment StoreEntitySet="VaccinationCenter">
+                <ScalarProperty Name="AstraZeneca18plus" ColumnName="AstraZeneca18plus" />
+                <ScalarProperty Name="Novavax12Yplus" ColumnName="Novavax12Yplus" />
+                <ScalarProperty Name="pfizer12Yplus" ColumnName="pfizer12Yplus" />
+                <ScalarProperty Name="Pfizer5Yto11Y" ColumnName="Pfizer5Yto11Y" />
+                <ScalarProperty Name="Moderna12Yplus" ColumnName="Moderna12Yplus" />
+                <ScalarProperty Name="Moderna6Yto11Y" ColumnName="Moderna6Yto11Y" />
+                <ScalarProperty Name="Moderna6Mto5Y" ColumnName="Moderna6Mto5Y" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="ProviderWebsite" ColumnName="ProviderWebsite" />
+                <ScalarProperty Name="OtherInstructions" ColumnName="OtherInstructions" />
+                <ScalarProperty Name="BookingInstructions" ColumnName="BookingInstructions" />
+                <ScalarProperty Name="AgeRestrictionInstructions" ColumnName="AgeRestrictionInstructions" />
+                <ScalarProperty Name="ClosureInstructions" ColumnName="ClosureInstructions" />
+                <ScalarProperty Name="ResultsInstructions" ColumnName="ResultsInstructions" />
+                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+                <ScalarProperty Name="SundayClosingHours" ColumnName="SundayClosingHours" />
+                <ScalarProperty Name="SundayBreakEndTime" ColumnName="SundayBreakEndTime" />
+                <ScalarProperty Name="SundayBreakStartTime" ColumnName="SundayBreakStartTime" />
+                <ScalarProperty Name="SundayOpeningHours" ColumnName="SundayOpeningHours" />
+                <ScalarProperty Name="SaturdayClosingHours" ColumnName="SaturdayClosingHours" />
+                <ScalarProperty Name="SaturdayBreakEndTime" ColumnName="SaturdayBreakEndTime" />
+                <ScalarProperty Name="SaturdayBreakStartTime" ColumnName="SaturdayBreakStartTime" />
+                <ScalarProperty Name="SaturdayOpeningHours" ColumnName="SaturdayOpeningHours" />
+                <ScalarProperty Name="FridayClosingHours" ColumnName="FridayClosingHours" />
+                <ScalarProperty Name="FridayBreakEndTime" ColumnName="FridayBreakEndTime" />
+                <ScalarProperty Name="FridayBreakStartTime" ColumnName="FridayBreakStartTime" />
+                <ScalarProperty Name="FridayOpeningHours" ColumnName="FridayOpeningHours" />
+                <ScalarProperty Name="ThursdayClosingHours" ColumnName="ThursdayClosingHours" />
+                <ScalarProperty Name="ThursdayBreakEndTime" ColumnName="ThursdayBreakEndTime" />
+                <ScalarProperty Name="ThursdayBreakStartTime" ColumnName="ThursdayBreakStartTime" />
+                <ScalarProperty Name="ThursdayOpeningHours" ColumnName="ThursdayOpeningHours" />
+                <ScalarProperty Name="WednesdayClosingHours" ColumnName="WednesdayClosingHours" />
+                <ScalarProperty Name="WednesdayBreakEndTime" ColumnName="WednesdayBreakEndTime" />
+                <ScalarProperty Name="WednesdayBreakStartTime" ColumnName="WednesdayBreakStartTime" />
+                <ScalarProperty Name="WednesdayOpeningHours" ColumnName="WednesdayOpeningHours" />
+                <ScalarProperty Name="TuesdayClosingHours" ColumnName="TuesdayClosingHours" />
+                <ScalarProperty Name="TuesdayBreakEndTime" ColumnName="TuesdayBreakEndTime" />
+                <ScalarProperty Name="TuesdayBreakStartTime" ColumnName="TuesdayBreakStartTime" />
+                <ScalarProperty Name="TuesdayOpeningHours" ColumnName="TuesdayOpeningHours" />
+                <ScalarProperty Name="MondayClosingHours" ColumnName="MondayClosingHours" />
+                <ScalarProperty Name="MondayBreakEndTime" ColumnName="MondayBreakEndTime" />
+                <ScalarProperty Name="MondayBreakStartTime" ColumnName="MondayBreakStartTime" />
+                <ScalarProperty Name="MondayOpeningHours" ColumnName="MondayOpeningHours" />
+                <ScalarProperty Name="ReferralRequired" ColumnName="ReferralRequired" />
+                <ScalarProperty Name="AgeLimit" ColumnName="AgeLimit" />
+                <ScalarProperty Name="BookingPhoneNumber" ColumnName="BookingPhoneNumber" />
+                <ScalarProperty Name="BookingLink" ColumnName="BookingLink" />
+                <ScalarProperty Name="BookingRequired" ColumnName="BookingRequired" />
+                <ScalarProperty Name="WalkInAllowed" ColumnName="WalkInAllowed" />
+                <ScalarProperty Name="WheelchairAccessible" ColumnName="WheelchairAccessible" />
+                <ScalarProperty Name="DriveThroughTesting" ColumnName="DriveThroughTesting" />
+                <ScalarProperty Name="LocationInstructions" ColumnName="LocationInstructions" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="ClinicAddressLine2" ColumnName="ClinicAddressLine2" />
+                <ScalarProperty Name="ClinicAddressLine1" ColumnName="ClinicAddressLine1" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

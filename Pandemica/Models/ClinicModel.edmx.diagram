@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4347e54f56ad4fdbb1d0ef0239e050da" Name="Diagram1" ZoomLevel="49">
+        <EntityTypeShape EntityType="pandemicaDBModel.Clinic" Width="11" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pandemicaDBModel.Appointment" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="pandemicaDBModel.VaccinationCenter" Width="1.5" PointX="12.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
